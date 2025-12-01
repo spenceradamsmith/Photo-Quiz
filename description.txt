@@ -1,0 +1,14 @@
+{
+  "description": "A pair of white low-top sneakers with white laces sits on a light-colored wood grain surface. The shoes have a logo on the side and show minor signs of wear and dirt on the soles.",
+  "brand": "On",
+  "model": "The Roger",
+  "year": "unknown year",
+  "color": "white",
+  "condition": "used",
+  "style": "casual sneaker",
+  "category_general": "clothing",
+  "material": "leather, rubber, mesh",
+  "context": "on a wood-grain surface",
+  "size": "medium",
+  "notable_features": "Stylized 'On' logo on the side and tongue, 'THE ROGER' text on the heel counter, perforated details on the upper."
+}
