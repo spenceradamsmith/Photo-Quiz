@@ -17,9 +17,9 @@ openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 DIFFICULTIES = ["Easy", "Medium", "Hard", "Very Hard"]
 CATEGORIES = [
+    "General",
     "History",
     "Fun Fact",
-    "Design/Engineering",
     "Records/Statistics",
 ]
 
@@ -30,7 +30,7 @@ def quiz():
 
     image = request.files["image"]
     difficulty = request.form.get("difficulty", "Medium").strip().title()
-    category = request.form.get("category", "Fun Fact")
+    category = request.form.get("category", "General")
 
     if difficulty not in DIFFICULTIES or category not in CATEGORIES:
         return jsonify({"error": "invalid difficulty or category"}), 400
@@ -127,8 +127,7 @@ IMAGE BINDING RULES (STRICT)
 CATEGORY NAME BAN
 ============================================================
 The question MUST NOT include the category name in the text:
-• Do NOT use words like: "fun fact", "history", "historically", "record", "design-wise",
-  "engineered", "statistical record", or similar.
+• Do NOT use words like: "fun fact", "history", "historically", "record", "statistical record", or similar.
 • The category should influence the *type of insight*, NOT appear as wording.
 
 ============================================================
@@ -145,15 +144,14 @@ BACKGROUND REQUIREMENTS
 ============================================================
 CATEGORY INTERPRETATION RULES
 ============================================================
+General
+→ Any trivia question. Can be a combination of other categories or anyting about the object/thing.
+
 History
 → Origins, evolution, milestones, or development of THIS brand/model/type.
 
 Fun Fact
 → Unexpected, quirky, surprising, or lesser-known insights about THIS brand/model/type.
-
-Design/Engineering
-→ Construction, materials, structure, innovations, or design reasoning of THIS object
-   or closely related versions or product lines.
 
 Records/Statistics
 → Achievements, breakthroughs, notable comparisons, firsts, or extremes tied to THIS
@@ -223,7 +221,7 @@ DISTRACTOR RULES (IMPORTANT)
 ============================================================
 ALL wrong answers MUST:
 • Be plausible and of the same *type* as the correct answer
-  (if the correct answer is a design choice, all options must be design choices; 
+  (if the correct answer is a fun-fact choice, all options must be fun-fact choices; 
    if it’s a collaboration detail, all options must be collaboration details, etc.).
 • Scale with difficulty:
   - EASY → somewhat believable but clearly weaker.
