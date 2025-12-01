@@ -19,8 +19,8 @@ DIFFICULTIES = ["Easy", "Medium", "Hard", "Very Hard"]
 CATEGORIES = [
     "History",
     "Fun Fact",
-    "Design / Engineering",
-    "Records / Statistics",
+    "Design/Engineering",
+    "Records/Statistics",
 ]
 
 @app.route("/quiz", methods=["POST"])
@@ -151,11 +151,11 @@ History
 Fun Fact
 → Unexpected, quirky, surprising, or lesser-known insights about THIS brand/model/type.
 
-Design / Engineering
+Design/Engineering
 → Construction, materials, structure, innovations, or design reasoning of THIS object
    or closely related versions or product lines.
 
-Records / Statistics
+Records/Statistics
 → Achievements, breakthroughs, notable comparisons, firsts, or extremes tied to THIS
    brand/model/type.
 
